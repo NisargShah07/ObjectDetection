@@ -14,7 +14,7 @@ flat1=keras.layers.Flatten()(model1.layers[-1].output)<br/>
 model2=keras.applications.DenseNet201(include_top=False,input_shape=(32,32,3))<br/>
 flat2=keras.layers.Flatten()(model2.layers[-1].output)</b><br/><br/>
 The fifth block generates the custom model combining those two pre-trained models.<br/><br/>
-<b>def model_vgg19():<br/>
+<b>def model_custom():<br/>
   concatLayer=keras.layers.Concatenate(axis=1)([flat1,flat2])<br/>
   layer1=keras.layers.Dense(units=256,activation='relu')(concatLayer)<br/>
   layer4=keras.layers.Dense(units=128,activation='relu')(layer1)<br/>
